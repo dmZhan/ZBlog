@@ -1,17 +1,33 @@
 {
   "name": "ZBlog",
+  "private": true,
   "description": "dmZhan's station",
-  "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },
   "keywords": [
-    "Blog"
+    "Blog",
+    "dmZhan",
+    "vitepress",
+    "rss"
   ],
-  "author": "dmZhan",
-  "license": "ISC",
+  "author": {
+    "name": "dmZhan",
+    "email": "zqj1130123899@gmail.com",
+    "url": "bmei.love"
+  },
+  "homepage": "https://github.com/dmZhan/ZBlog#readme",
+  "bugs": {
+    "url": "https://github.com/dmZhan/ZBlog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmZhan/ZBlog.git"
+  },
+  "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "dayjs": "^1.11.9",
     "feed": "^4.2.2",
