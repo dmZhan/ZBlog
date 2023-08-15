@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { rss } from './theme/rss'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -7,18 +8,29 @@ export default defineConfig({
   description: "Dog Man's blog",
   lastUpdated: true,
   cleanUrls: true,
-  // appearance: false,
+  appearance: false,
   markdown: {
     lineNumbers: true
   },
-  buildEnd: ()=>console.log(123),
+  buildEnd: rss,
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/svg',
+        href: '/horse.svg'
+      }
+    ]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: { src: '/horse.svg' },
+    logo: '/horse.svg',
     outline: [2, 3],
     search: {
       provider: 'local'
     },
+    externalLinkIcon: true,
     nav: [
       { text: '🏡Home', link: '/' },
       {
@@ -28,21 +40,22 @@ export default defineConfig({
       {
         text: "📃Archives",
         link: "/Archives",
-      },
+      }
     ],
-
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' }
-    //     ]
-    //   }
-    // ],
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { 
+        icon: 'github',
+        link: 'https://github.com/vuejs/vitepress'
+      },
+      {
+        icon: {
+          svg: `<svg role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                  <title>RSS</title>
+                  <use xlink:href="/rss.svg#rss"/>
+                </svg>`
+        },
+        link: '/rss.xml'
+      }
     ]
   }
 })

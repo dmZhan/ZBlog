@@ -5,8 +5,9 @@ import Comments from './Comments.vue'
 import Hero from './Hero.vue'
 import Page from './Page.vue'
 import Progress from './Progress.vue'
-import Title from './Title.vue'
-import Category from './Category.vue'
+import CopyWright from './CopyWright.vue'
+// import Title from './Title.vue'
+// import Category from './Category.vue'
 
 
 const { Layout } = DefaultTheme
@@ -17,10 +18,10 @@ const { Layout } = DefaultTheme
     <template #doc-top>
       <Progress />
     </template>
-    <template #doc-before>
+    <!-- <template #doc-before>
       <Title />
       <Category />
-    </template>
+    </template> -->
     <template #doc-after>
       <Comments />
     </template>
@@ -34,4 +35,5 @@ const { Layout } = DefaultTheme
       <Page />
     </template>
   </Layout>
+  <CopyWright />
 </template>

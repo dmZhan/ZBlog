@@ -1,9 +1,19 @@
 <script setup lang='ts'>
 import { computed, ref } from 'vue'
-import { data as posts } from '../../posts.data'
+import { data } from '../../posts.data'
+import { formatDateOne } from '../../utils'
 
 const pageNumber = ref(1)
 const pageSize = 5
+const posts = data.map((post) => {
+                return {
+                  title: post.frontmatter.title,
+                  url: post.url,
+                  date: formatDateOne(post.frontmatter.date)
+                }
+              }).sort((a, b) => {
+                return +new Date(b.date) - +new Date(a.date)
+              })
 const pageTotal = Math.ceil(posts.length / pageSize)
 const hasPrevPage = computed(() => {
   return pageNumber.value > 1

@@ -1,37 +1,18 @@
 import { createContentLoader } from 'vitepress'
 
-function formatDate(t: string): Post['date'] {
-  const date = new Date(t)
-  date.setUTCHours(12)
-  return date.toLocaleDateString('zh-CN', {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit'
-  })
-}
-
-export interface Post {
-  title: string
+interface ContentData {
+  // mapped absolute URL for the page. e.g. /posts/hello.html
   url: string
-  date: string
-}
+  // frontmatter data of the page
+  frontmatter: Record<string, any>
 
-declare const data: Post[]
+  // the following are only present if relevant options are enabled
+  // we will discuss them below
+  src: string | undefined
+  html: string | undefined
+  excerpt: string | undefined
+}
+declare const data: ContentData[]
 export { data }
 
-export default createContentLoader('posts/*.md', {
-  transform: (raw) => {
-    return raw
-      .map((post) => {
-        return {
-          title: post.frontmatter.title,
-          url: post.url,
-          date: formatDate(post.frontmatter.date)
-        }
-      })
-      .sort((a, b) => {
-        return +new Date(b.date) - +new Date(a.date)
-      })
-  }
-})
-
+export default createContentLoader('posts/*.md')
