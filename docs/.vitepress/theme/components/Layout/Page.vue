@@ -1,3 +1,4 @@
+<!-- 主页文章列表 -->
 <script setup lang='ts'>
 import { computed, ref } from 'vue'
 import { data } from '../../posts.data'

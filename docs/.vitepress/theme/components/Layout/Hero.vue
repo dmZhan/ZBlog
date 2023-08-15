@@ -1,3 +1,4 @@
+<!-- 主页 -->
 <template>
   <div class="hero">
     <!-- 头像 -->
@@ -9,7 +10,7 @@
     <!-- 自我介绍 -->
     <div>
       <p class="introduce">
-        <i>Hi, I'm DogMan. 👋</i>
+        <i>Hi, I'm Dog Man. 👋</i>
       </p>
       <p>
         <i>I have a lot of things I want to do. 😎</i>

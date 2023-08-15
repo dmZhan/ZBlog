@@ -32,7 +32,10 @@ export default defineConfig({
     },
     externalLinkIcon: true,
     nav: [
-      { text: '🏡Home', link: '/' },
+      { 
+        text: '🏡Home',
+        link: '/'
+      },
       {
         text: "🔖Tags",
         link: "/Tags",
@@ -40,12 +43,16 @@ export default defineConfig({
       {
         text: "📃Archives",
         link: "/Archives",
+      },
+      {
+        text: "About",
+        link: "/About",
       }
     ],
     socialLinks: [
       { 
         icon: 'github',
-        link: 'https://github.com/vuejs/vitepress'
+        link: 'https://github.com/dmZhan'
       },
       {
         icon: {

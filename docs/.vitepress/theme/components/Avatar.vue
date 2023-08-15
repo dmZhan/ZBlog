@@ -1,3 +1,4 @@
+<!-- 在文章页显示个人信息 -->
 <script setup lang='ts'>
 import { VPTeamMembers } from 'vitepress/theme'
 import telegram from '/telegram.svg?raw'
