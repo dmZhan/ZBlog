@@ -1,17 +1,18 @@
 <!-- 文章评论区域 -->
 <script setup lang="ts">
-import { useData } from 'vitepress'
+// import { useData } from 'vitepress'
 
-const { title } = useData()
+// const { title } = useData()
 </script>
 
 <template>
   <div class="comments">
-    <component
+    need to do something
+    <!-- <component
       :is="'script'"
       :key="title"
       src="https://giscus.app/client.js"
-      data-repo="aiktb/rea"
+      data-repo="dmZhan/ZBlog"
       data-repo-id="R_kgDOJQkw9Q"
       data-category="General"
       data-category-id="DIC_kwDOJQkw9c4CVeXc"
@@ -24,6 +25,6 @@ const { title } = useData()
       data-theme="transparent_dark"
       data-loading="lazy"
       async
-    />
+    /> -->
   </div>
 </template>
