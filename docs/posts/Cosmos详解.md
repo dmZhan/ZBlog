@@ -73,10 +73,10 @@ Tendermint 团队构建了 Cosmos-SDK，实现了区块链场景中一系列的�
 
 ### 基于 Tendermint Core 和 Cosmos-SDK 构建的区块链系统
 
-![](../public/WeChatf903a2cdf12631278f330b086b4b2fd8.png)
+![](/WeChatf903a2cdf12631278f330b086b4b2fd8.png)
 
 ### IBC 协议
 
 IBC 协议是为了跨链而诞生的，是基于中继机制而实现的协议，原理是任意两个希望跨链通信的区块链可以依赖密码学证明技术向对方链证明自身链上发生了特定的事件。两条链之间的网络通信通过中继者（relayer）完成。
 
-![](../public/WeChatd288ba57261eae3fef086b7f0abcff78.png)
+![](/WeChatd288ba57261eae3fef086b7f0abcff78.png)

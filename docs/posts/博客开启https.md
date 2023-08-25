@@ -76,7 +76,7 @@ sudo systemctl status nginx //检查其运行状态
 然后按照官网的示例接着装
 
 最后能看到下面这张图
-![成功的图片](../public/cerbot.png)
+![成功的图片](/cerbot.png)
 
 热泪盈眶啊，有没有...
 
