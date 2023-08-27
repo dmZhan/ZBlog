@@ -15,7 +15,7 @@ interface ContentData {
 declare const data: ContentData[]
 export { data }
 
-export default createContentLoader('posts/*.md', {
+export default createContentLoader('posts/**/*.md', {
   transform(rowData: ContentData[]) {
     return rowData
     // return rowData.filter(m => !m.frontmatter.private)
