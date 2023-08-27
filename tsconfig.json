@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     /* Linting */
