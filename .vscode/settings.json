@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
     "vitepress"
-  ]
+  ],
+  "nuxt.isNuxtApp": false
 }
