@@ -60,9 +60,9 @@ const ast = parser.parse("代码", {
 - tokens parse 的时候是否保留 token 信息
 - ranges 是否在 ast 节点中添加 ranges 属性
 
-用[![astexplorer.net](/Babel/babel-ast-11.awebp)](https://astexplorer.net/)来查看 AST 的时候，也同样支持 parser options 的设置：
+用[![astexplorer.net](/Babel/babel-ast-11.png)](https://astexplorer.net/)来查看 AST 的时候，也同样支持 parser options 的设置：
 
-![astexplorer.net setting](/Babel/babel-api-1.awebp)
+![astexplorer.net setting](/Babel/babel-api-1.png)
 
 ### @babel/traverse
 
@@ -99,7 +99,7 @@ traverse(ast, {
 
 enter 时调用是在遍历当前节点的子节点前调用，exit 时调用是遍历完当前节点的子节点后调用。
 
-![astexplorer.net setting](/Babel/babel-api-2.awebp)
+![astexplorer.net setting](/Babel/babel-api-2.png)
 
 而且同一个 visitor 函数可以用于多个 AST 节点的处理，方式是指定一系列 AST，用 | 连接：
 
@@ -127,7 +127,7 @@ traverse(ast, {
 
 AST 是棵树，遍历过程中肯定是有个路径的，path 就记录了这个路径：
 
-![path](/Babel/babel-api-3.awebp)
+![path](/Babel/babel-api-3.png)
 
 如图，节点 1、节点 2、节点 3 是三层 AST，通过两个 path 关联了起来，
 
@@ -171,7 +171,7 @@ path2 关联了节点 2 和节点 3，记录了节点 2 是父节点，节点 3 
 
 确实，path 的 api 是学习 babel 插件最核心的。
 
-![path](/Babel/babel-api-4.awebp)
+![path](/Babel/babel-api-4.png)
 
 上面罗列了一些常用的 api，可以通过这些 api 完成对 AST 的操作。当然，path 的 api 不是只有这些，后面实战案例用到了再介绍。
 
@@ -179,7 +179,7 @@ path2 关联了节点 2 和节点 3，记录了节点 2 是父节点，节点 3 
 
 第二个参数 state 则是遍历过程中在不同节点之间传递数据的机制，插件会通过 state 传递 options 和 file 信息，我们也可以通过 state 存储一些遍历过程中的共享数据。
 
-![state](/Babel/babel-api-5.awebp)
+![state](/Babel/babel-api-5.png)
 
 这个很容易理解，节点之间是有传输数据的需求的。不同状态下可能会做不同的处理，这就是为什么这个参数叫做 state。
 
@@ -234,7 +234,7 @@ template.statements 返回创建的 statems 数组的 AST。
 
 还是有意义的，比如上节说表达式作为语句执行的时候，AST 会有一层 ExpressionStatement 么：
 
-![template](/Babel/babel-api-6.awebp)
+![template](/Babel/babel-api-6.png)
 
 所以用 template.ast 创建的 Expression 会被包裹一层 ExpressionStatement 节点，而 template.expression 方法创建的 AST 就不会。
 
@@ -317,7 +317,7 @@ try {
 
 打印的错误就是这样的：
 
-![code-frame](/Babel/babel-api-6.awebp)
+![code-frame](/Babel/babel-api-6.png)
 
 在控制台展示这样的错误，是不是比直接打印个错误堆栈好很多呀～
 

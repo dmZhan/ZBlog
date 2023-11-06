@@ -17,7 +17,7 @@ Literal 是字面量的意思，比如 let name = 'guang'中，'guang'就是一�
 
 下面这些字面量都有对应的 Literal 节点：
 
-![Literal 节点](/Babel/babel-ast-1.awebp)
+![Literal 节点](/Babel/babel-ast-1.png)
 
 代码中的字面量很多，babel 就是通过 xxLiteral 来抽象这部分内容的。
 
@@ -52,7 +52,7 @@ with (a){}
 
 它们对应的 AST 节点如下图所示：
 
-![Statement 节点](/Babel/babel-ast-2.awebp)
+![Statement 节点](/Babel/babel-ast-2.png)
 
 语句是代码执行的最小单位，可以说，代码是由语句（Statement）构成的。\
 
@@ -76,7 +76,7 @@ export * from 'e';
 
 它们对应的 AST 节点如下图：
 
-![Declaration 节点](/Babel/babel-ast-3.awebp)
+![Declaration 节点](/Babel/babel-ast-3.png)
 
 声明语句用于定义变量，这也是代码中一个基础组成部分。
 
@@ -102,7 +102,7 @@ a::b;
 
 它们对应的AST如图：
 
-![Expression 节点](/Babel/babel-ast-4.awebp)
+![Expression 节点](/Babel/babel-ast-4.png)
 
 细心的同学可能会问 identifier 和 super 怎么也是表达式呢？
 
@@ -112,7 +112,7 @@ a::b;
 
 有的表达式可以单独执行，符合语句的特点，所以也是语句，比如赋值表达式、数组表达式等。但有的表达式不能单独执行，需要和其他类型的节点组合在一起构成语句。比如匿名函数表达式和匿名 class 表达式单独执行会报错。需要和其他部分一起构成一条语句，比如组成赋值语句。
 
-![Expression 节点](/Babel/babel-ast-5.awebp)
+![Expression 节点](/Babel/babel-ast-5.png)
 
 赋值语句的 AST 节点 AssignmentExpression 包裹了一层ExpressionStatement 的节点，代表这个表达式是被当成语句执行的。
 
@@ -132,7 +132,7 @@ class Guang extends Person{
 
 对应的AST是这样的
 
-![Class 节点](/Babel/babel-ast-6.awebp)
+![Class 节点](/Babel/babel-ast-6.png)
 
 class 是 es next 的语法，babel 中有专门的 AST 来表示它的内容。
 
@@ -157,7 +157,7 @@ import * as b from 'b';
 
 这 3 种语法都对应 ImportDeclaration 节点，但是 specifiers 属性不同，分别对应 ImportSpicifier、ImportDefaultSpecifier、ImportNamespaceSpcifier。
 
-![Modules 节点](/Babel/babel-ast-7.awebp)
+![Modules 节点](/Babel/babel-ast-7.png)
 
 图中黄框标出的就是 specifier 部分。可以直观的看出整体结构相同，只是 specifier 部分不同，所以 import 语法的 AST 的结构是 ImportDeclaration 包含着各种 import specifier。
 
@@ -178,13 +178,13 @@ export * from 'c';
 
 分别对应 ExportNamedDeclaration、ExportDefaultDeclaration、ExportAllDeclaration 的 AST。
 
-![Modules 节点](/Babel/babel-ast-8.awebp)
+![Modules 节点](/Babel/babel-ast-8.png)
 
 ### Program & Directive
 
 program 是代表整个程序的节点，它有 body 属性代表程序体，存放 statement 数组，就是具体执行的语句的集合。还有 directives 属性，存放 Directive 节点，比如"use strict" 这种指令会使用 Directive 节点表示。
 
-![Program 节点](/Babel/babel-ast-9.awebp)
+![Program 节点](/Babel/babel-ast-9.png)
 
 Program 是包裹具体执行语句的节点，而 Directive 则是代码中的指令部分。
 
@@ -194,7 +194,7 @@ babel 的 AST 最外层节点是 File，它有 program、comments、tokens 等�
 
 注释分为块注释和行内注释，对应 CommentBlock 和 CommentLine 节点。
 
-![Comment 节点](/Babel/babel-ast-10.awebp)
+![Comment 节点](/Babel/babel-ast-10.png)
 
 上面 6 种就是常见的一些 AST 节点类型，babel 就是通过这些节点来抽象源码中不同的部分。
 
@@ -202,7 +202,7 @@ babel 的 AST 最外层节点是 File，它有 program、comments、tokens 等�
 
 可以使用[axtexplorer.net](https://astexplorer.net/)这个网站查看AST。
 
-[![AST 可视化查看工具](/Babel/babel-ast-11.awebp)](https://astexplorer.net/)
+[![AST 可视化查看工具](/Babel/babel-ast-11.png)](https://astexplorer.net/)
 
 这个网站可以查看代码 parse 以后的 AST，可以切换 parse 的语言和用的 parser，也可以修改 parse options。
 
@@ -220,12 +220,12 @@ babel 的 AST 最外层节点是 File，它有 program、comments、tokens 等�
 
 比如这段有注释的代码的 AST：
 
-![AST 公共属性](/Babel/babel-ast-12.awebp)
+![AST 公共属性](/Babel/babel-ast-12.png)
 
 - extra：记录一些额外的信息，用于处理一些特殊情况。比如 StringLiteral 的 value 只是值的修改，而修改 extra.raw 则可以连同单双引号一起修改。
 
 比如这段代码的 AST：
 
-![AST 公共属性](/Babel/babel-ast-13.awebp)
+![AST 公共属性](/Babel/babel-ast-13.png)
 
 修改 value 只能修改值，修改 extra.raw 可以连引号一起修改。
