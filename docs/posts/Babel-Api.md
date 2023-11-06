@@ -32,7 +32,7 @@ function parseExpression(input: string, options?: ParserOptions): Expression
 
 详细的 options 可以查看文档。其实主要分为两类，一是 parse 的内容是什么，二是以什么方式去 parse
 
-#### parse 的内容是什么：
+#### parse 的内容是什么
 
 - plugins： 指定jsx、typescript、flow 等插件来解析对应的语法
 - allowXxx： 指定一些语法是否允许，比如函数外的 await、没声明的 export等
