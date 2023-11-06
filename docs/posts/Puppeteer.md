@@ -218,7 +218,7 @@ const puppeteer = require("puppeteer");
 - page.evaluate(pageFunction[, ...args])
   - pageFunction <function|string> 要在页面实例上下文中执行的方法
   - ...args <...Serializable|JSHandle> 要传给 pageFunction 的参数
-  - 返回: <Promise> pageFunction执行的结果,如果pageFunction返回的是Promise，page.evaluate将等待promise完成，并返回其返回值。如果pageFunction返回的是不能序列化的值，将返回undefined
+  - 返回: Promise pageFunction执行的结果,如果pageFunction返回的是Promise，page.evaluate将等待promise完成，并返回其返回值。如果pageFunction返回的是不能序列化的值，将返回undefined
 
 ```javascript
 const puppeteerVar = 7; // puppeteer变量

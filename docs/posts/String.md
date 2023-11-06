@@ -21,7 +21,7 @@ tags:
 
 单独代理项不代表任何 Unicode 字符。尽管大多数 JavaScript 内置方法都可以正确处理它们，因为它们都是基于 UTF-16 码元工作的，但是在与其他系统交互时，单独代理项通常不是有效的值。例如，encodeURI() 会为单独代理项抛出 URIError，因为 URI 编码使用 UTF-8 编码，而 UTF-8 没有任何编码单独代理项的方法。不包含任何单独代理项的字符串称为规范的字符串，并且可以安全地与不处理 UTF-16 的函数一起使用，例如 encodeURI() 或 TextEncoder 。你可以使用 isWellFormed() 方法检查字符串是否规范，或使用 toWellFormed() 方法清除单独代理项。
 
-除了 Unicode 字符之外，还有某些 Unicode 字符序列应视为一个视觉单元，被称为字素簇（grapheme cluster）。最常见的情况是 emoji：许多具有多种变体的 emoji 实际上是由多个 emoji 组成的，通常由 <ZWJ>（U+200D）字符连接。
+除了 Unicode 字符之外，还有某些 Unicode 字符序列应视为一个视觉单元，被称为字素簇（grapheme cluster）。最常见的情况是 emoji：许多具有多种变体的 emoji 实际上是由多个 emoji 组成的，通常由 （U+200D）字符连接。
 
 你必须小心迭代字符级别。例如，split("") 将按照 UTF-16 码元分割并将代理对分开。字符串索引也是指的每个 UTF-16 码元的索引。另一方面，@@iterator() 按 Unicode 码位迭代。遍历字素簇将需要一些自定义代码。
 
